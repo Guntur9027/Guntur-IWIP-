@@ -4217,5 +4217,15 @@ body.dimmersive #top{transition:padding .3s ease}
   syncBtns();
 })();
 </script>
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .catch(error => console.error(
+        'Service worker gagal:', error
+      ));
+  });
+}
+</script>
 </body>
 </html>
